@@ -1,0 +1,20 @@
+saikanth
+Leetcode Question Number-1380(Lucky Numbers in a Matrix)
+solution:
+class Solution:
+    def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
+        min1=[]
+        for i in matrix:
+            min1.append(min(i))
+        max1=[]
+        for i in range(len(matrix[0])):
+            l=[]
+            for j in range(len(matrix)):
+                l.append(matrix[j][i])
+            max1.append(l)
+        max2=[]
+        for i in max1:
+            max2.append(max(i))
+        for j in min1:
+            if j in max2:
+                return [j]
