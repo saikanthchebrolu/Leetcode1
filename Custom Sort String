@@ -1,0 +1,16 @@
+saikanth
+791-Custom Sort String
+solution:
+#########################################################
+class Solution:
+    def customSortString(self, order: str, s: str) -> str:
+        p=""
+        for i in order:
+            p=p+s.count(i)*i
+        k=list(s)
+        for i in p:
+            if i in k:
+                k.remove(i)
+        b="".join(k)
+        return p+b
+        
