@@ -1,0 +1,10 @@
+saikanth
+Second largest Digit(problem no:1796)
+solution:
+l=[ i for i in s if i.isnumeric()]
+l=sorted(list(set(l)))
+print(l)
+if len(l)==1:
+    print(-1)
+else:
+    print(int(l[-2]))
