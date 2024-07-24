@@ -1,0 +1,17 @@
+saikanth
+problem no:2363
+solution:
+p = []
+for item in items2:
+    items1.append(item)
+k= {}
+for item in items1:
+    key = item[0]
+    value = item[1]
+    if key in k:
+        k[key]=k[key]+value
+    else:
+        k[key] = value
+for key, value in accum_dict.items():
+    p.append([key, value])
+return p
