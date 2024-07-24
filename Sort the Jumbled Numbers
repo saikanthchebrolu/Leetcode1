@@ -1,0 +1,13 @@
+problem no:2191
+solution:
+l=[]
+k=[]
+for i in nums:
+    p=""
+    for j in str(i):
+        p=p+str(mapping[int(j)])
+    l.append(int(p))
+p = list(zip(nums, l))
+p.sort(key=lambda x: x[1])
+k = [i[0] for i in p]
+return k
