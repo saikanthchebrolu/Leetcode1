@@ -1,0 +1,12 @@
+saikanth
+problem no:2956
+solution:
+  p=0
+  q=0
+  for i in nums1:
+      if i in nums2:
+          p=p+1
+  for j in nums2:
+      if j in nums1:
+          q=q+1
+  return ([p,q])
