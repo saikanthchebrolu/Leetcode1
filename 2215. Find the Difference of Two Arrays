@@ -1,0 +1,12 @@
+saikanth
+problem no:2215
+solution:
+k=[]
+p=[]
+for i in nums1:
+    if i not in nums2:
+        k.append(i)
+for i in nums2:
+    if i not in nums1:
+        p.append(i)
+return [list(set(k)),list(set(p))]
