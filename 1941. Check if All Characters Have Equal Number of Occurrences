@@ -1,0 +1,12 @@
+saikanth
+problem no:1941
+solution:
+    p=list(s)
+    k=set(p)
+    l=[]
+    for i in k:
+        l.append(s.count(i))
+    if len(set(l))==1:
+        return True
+    else:
+        return False
