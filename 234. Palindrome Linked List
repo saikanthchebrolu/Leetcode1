@@ -1,0 +1,12 @@
+saikanth
+problem no:234
+solution:
+stack=[]
+    curr=head
+    while(curr!=None):
+        stack.append(curr.val)
+        curr=curr.next
+    curr=head
+    while curr!=None and curr.val==stack.pop():
+        curr=curr.next
+    return len(stack)==0
