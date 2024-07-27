@@ -1,0 +1,16 @@
+saikanth
+problem no:1721
+solution:
+        temp=head
+        c=0
+        while(temp!=None):
+            c=c+1
+            temp=temp.next
+        p=head
+        q=head
+        for i in range(k-1):
+            p=p.next
+        for j in range(c-k):
+            q=q.next
+        p.val,q.val=q.val,p.val
+        return head
