@@ -1,0 +1,21 @@
+problem no:2
+solution:
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        p = l1
+        q = l2
+        s = ""
+        a = ""
+        while p is not None:
+            s += str(p.val)
+            p = p.next
+        while q is not None:
+            a += str(q.val)
+            q = q.next
+        k = str(int(s[::-1]) + int(a[::-1]))[::-1]
+        new_head = ListNode(int(k[0]))
+        curr = new_head
+        for val in k[1:]:
+            curr.next = ListNode(int(val))
+            curr = curr.next
+        return new_head
