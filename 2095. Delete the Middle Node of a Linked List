@@ -1,0 +1,16 @@
+saikanth
+problem no:2095
+solution:
+temp=head
+c=0
+while(temp!=None):
+    c=c+1
+    temp=temp.next
+if c==1:
+    return None
+k=head
+for i in range((c//2)-1):
+    k=k.next
+if k.next!=None:
+    k.next=k.next.next
+return head
