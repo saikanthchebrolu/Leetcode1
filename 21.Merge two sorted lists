@@ -1,0 +1,34 @@
+saikanth
+problem no:21
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        p=[]
+        c=0
+        c1=0
+        if list1==None and list2==None:
+            return None
+        curr1=list1
+        curr2=list2
+        while(curr1!=None):
+            c=c+1
+            curr1=curr1.next
+        while(curr2!=None):
+            c1=c1+1
+            curr2=curr2.next
+        s=list1
+        a=list2
+        for i in range(c):
+            p.append(s.val)
+            s=s.next
+        for j in range(c1):
+            p.append(a.val)
+            a=a.next
+        p.sort()
+        print(p)
+        new_head=ListNode(p[0])
+        temp=new_head
+        for k in p[1:]:
+            temp.next=ListNode(k)
+            temp=temp.next
+        return new_head
+
