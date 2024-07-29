@@ -1,0 +1,17 @@
+saikanth
+problem no:3217
+solution
+class Solution:
+    def modifiedList(self, nums: List[int], head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy=ListNode(-1)
+        t=dummy
+        s=set(nums)
+        while(head!=None):
+            if head.val not in s:
+                t.next=head
+                t=t.next
+            head=head.next
+        t.next=None
+        return dummy.next
+
+
