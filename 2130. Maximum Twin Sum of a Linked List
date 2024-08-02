@@ -1,0 +1,30 @@
+problem no:2130
+solution:
+class Solution:
+    def pairSum(self, head: Optional[ListNode]) -> int:
+        temp=head
+        c=0
+        while(temp!=None):
+            c=c+1
+            temp=temp.next
+        p=head
+        k=head
+        for i in range(c//2):
+            p=p.next
+        prev=None
+        c1=p
+        while c1!=None:
+            p1=c1.next
+            c1.next=prev
+            prev=c1
+            c1=p1
+        l=[]
+        for i in range(c//2):
+            v1=k.val
+            v2=prev.val
+            l.append(v1+v2)
+            k=k.next
+            prev=prev.next
+        return max(l)
+
+
