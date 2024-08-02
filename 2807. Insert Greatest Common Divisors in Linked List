@@ -1,0 +1,29 @@
+problem no:2807
+solution:
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def insertGreatestCommonDivisors(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy=ListNode(-1)
+        dummy.next=head
+        t=dummy
+        p1=head
+        p2=head.next
+        def gcd(a,b):
+            while b!=0:
+                a,b=b,a%b
+            return a
+        while(p2!=None):
+            a=p1.val
+            b=p2.val
+            result=gcd(a,b)
+            newnode=ListNode(result)
+            newnode.next=p2
+            p1.next=newnode
+            p1=newnode.next
+            p2=p2.next
+        return head
+
